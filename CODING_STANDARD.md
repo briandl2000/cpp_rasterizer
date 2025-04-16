@@ -8,7 +8,7 @@ This document outlines the coding standards and conventions to be followed in th
 1. **Language Standard**: Use **C++17** or later.
 2. **File Encoding**: Use UTF-8 encoding for all source files.
 3. **Line Endings**: Use LF (`\n`) for line endings.
-4. **Indentation**: Use **Tabs** for indentation. Do not use spaces.
+4. **Indentation**: Use **4 spaces** for indentation. Do not use tabs.
 5. **Line Length**: Limit lines to **100 characters** where possible.
 6. **Comments**: Use `//` for single-line comments and `/* */` for multi-line comments. Write meaningful comments explaining why, not what.
 

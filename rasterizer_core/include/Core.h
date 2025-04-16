@@ -7,13 +7,11 @@
 #include <algorithm>
 #include <unordered_map>
 
-
 #include <cstdint>
 
 #ifdef _WIN32
 #include <windows.h>
 #endif 
-
 
 namespace Rasterizer {
 
@@ -50,17 +48,13 @@ namespace Rasterizer {
     template<typename T>
     using SharedPtr = std::shared_ptr<T>;
     template<typename T>
-    using WeakPtr = std::weak_ptr<T>;
-    template<typename T>
     using UniquePtr = std::unique_ptr<T>;
+    template<typename T>
+    using WeakPtr = std::weak_ptr<T>;
 
     template<typename T, typename... Args>
     SharedPtr<T> MakeShared(Args&&... args) {
         return std::make_shared<T>(std::forward<Args>(args)...);
-    }
-    template<typename T, typename... Args>
-    UniquePtr<T> MakeUnique(Args&&... args) {
-        return std::make_unique<T>(std::forward<Args>(args)...);
     }
     template<typename T, typename... Args>
     UniquePtr<T> MakeUnique(Args&&... args) {
