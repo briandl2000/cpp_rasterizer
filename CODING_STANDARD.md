@@ -8,7 +8,7 @@ This document outlines the coding standards and conventions to be followed in th
 1. **Language Standard**: Use **C++17** or later.
 2. **File Encoding**: Use UTF-8 encoding for all source files.
 3. **Line Endings**: Use LF (`\n`) for line endings.
-4. **Indentation**: Use **4 spaces** for indentation. Do not use tabs.
+4. **Indentation**: Use **Tabs** for indentation. Do not use spaces.
 5. **Line Length**: Limit lines to **100 characters** where possible.
 6. **Comments**: Use `//` for single-line comments and `/* */` for multi-line comments. Write meaningful comments explaining why, not what.
 
@@ -20,11 +20,14 @@ This document outlines the coding standards and conventions to be followed in th
    - Header files should have `.hpp` extension, and source files should have `.cpp` extension.
 
 2. **Variables**:
-   - Use `camelCase` for local variables and function parameters (e.g., `frameBuffer`).
-   - Use `PascalCase` for global variables and constants (e.g., `FrameTime`).
+- Use `snake_case` for local variables and function parameters (e.g., `frame_buffer`).
+- Use `snake_case` for global variables and constants, prefixed as follows:
+    - Prefix constants with `c_` (e.g., `c_frame_time`).
+    - Prefix global variables with `g_` (e.g., `g_render_mode`).
+    - Prefix static variables with `s_` (e.g., `s_instance_count`).
 
 3. **Functions**:
-   - Use `camelCase` for function names (e.g., `drawFrame()`).
+   - Use `PascalCase` for function names (e.g., `DrawFrame()`).
    - Use descriptive names that clearly indicate the function's purpose.
 
 4. **Classes and Structs**:
@@ -52,7 +55,6 @@ This document outlines the coding standards and conventions to be followed in th
      3. Project headers.
 
 3. **Functions**:
-   - Keep functions short and focused. A function should ideally fit within 20-30 lines.
    - Use `const` wherever applicable for member functions and variables.
 
 4. **Classes**:
@@ -69,8 +71,8 @@ This document outlines the coding standards and conventions to be followed in th
 ---
 
 ## Memory Management
-1. Prefer smart pointers (`std::shared_ptr`, `std::unique_ptr`) over raw pointers.
-2. Use `std::make_shared` and `std::make_unique` for creating smart pointers.
+1. Prefer smart pointers (`SharedPtr`, `UniquePtr`) over raw pointers.
+2. Use `MakeShared` and `MakeUnique` for creating smart pointers.
 3. Avoid manual memory management (`new`/`delete`) unless absolutely necessary.
 
 ---
@@ -107,13 +109,6 @@ This document outlines the coding standards and conventions to be followed in th
 
 ---
 
-## Git Commit Messages
-1. Use the imperative mood (e.g., "Add feature X", "Fix bug Y").
-2. Keep the subject line under 50 characters.
-3. Provide a detailed description if necessary.
-
----
-
 ## Example Code
 ```cpp
 // Example of a well-structured class
@@ -128,16 +123,16 @@ This document outlines the coding standards and conventions to be followed in th
 class FrameBuffer
 {
 public:
-    FrameBuffer(uint32_t width, uint32_t height);
+    FrameBuffer(u32 width, u32 height);
     ~FrameBuffer();
 
-    void clear(uint32_t color);
-    uint32_t* getData();
+    void clear(u32 color);
+    u32* getData();
 
 private:
-    uint32_t width;
-    uint32_t height;
-    std::vector<uint32_t> data;
+    u32 width;
+    u32 height;
+    std::vector<u32> data;
 };
 ```
 
