@@ -1,0 +1,34 @@
+# Build directories
+build/
+*.vcxproj.user
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
+# Visual Studio files
+*.sln
+*.vcxproj.filters
+*.pdb
+*.obj
+*.log
+*.tlog
+*.idb
+*.ipch
+*.ilk
+*.pch
+*.db
+*.opendb
+*.VC.db
+
+# Binary files
+*.exe
+*.dll
+*.lib
+*.so
+*.a
+*.o
+
+# IDE settings
+.vscode/
